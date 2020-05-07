@@ -8,10 +8,10 @@ class RentableCar extends Car implements Rentable {
 
     @Override
     public void rent(String firstName, String lastName, String id) {
-        if (user == null) {
-            user = new Person(firstName, lastName, id);
-        } else {
+        if (isRent()) {
             System.out.println("Samochód aktualnie jest wynajęty przez " + user);
+        } else {
+            user = new Person(firstName, lastName, id);
         }
     }
 
